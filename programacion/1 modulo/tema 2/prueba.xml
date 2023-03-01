@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+	<pedidos>
+		<pedido>
+		
+			<n_cliente>Juan Delgado</n_cliente>
+			<direccion>c/barco,nº23, 1ºC</direccion>
+			<fecha>24/05/2022</fecha>
+			<articulo1>bicicleta</articulo1>
+			
+		</pedido>
+		
+		<pedido>
+		
+			<n_cliente>Juan Delgado</n_cliente>
+			<direccion>c/barco,nº23, 1ºC</direccion>
+			<fecha>25/05/2022</fecha>
+			<articulo>casco de bicicleta</articulo>
+			
+		</pedido>
+	</pedidos>

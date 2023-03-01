@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rojo{
+            font-size: 40px;
+            color: Red;
+            text-align: right;
+            text-transform: uppercase;
+        }
+        .azul{
+            font-size: 40px;
+            color: blue;
+            text-align: center;
+            text-transform: lowercase;
+        }
+        .verde{
+            font-size: 40px;
+            color: green;
+            text-transform: capitalize;
+            text-align: left;
+        }
+        .contenedor{
+            border: 1px dotted black;
+            width: 500px;
+            margin: 0 auto;
+            
+        }
+        .imagen{
+            float: right;
+            width: 200px;
+            margin: 10px 10px 0 10px;
+            border: 1px solid white;
+        }
+        .texto{
+            text-align: justify;
+            margin: 10px;
+            }
+        .enlace{
+            color: black;
+            text-decoration: none;
+        }
+        .enlace:hover{
+            color: blue;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        </style>
+</head>
+<body>
+    <ol>
+        <li>Apartado A</li>
+        <li>Apartado B</li>
+        <li>Apartado C
+            <ul type="disc">
+                <li>subapartado A</li>
+                <li>subapartado B</li>
+            </ul>
+        </li>
+        <li>Apartado D
+            <ol type="i">
+                <li>paso 1</li>
+                <li>paso 2</li>
+                <li>paso 3</li>
+            </ol>
+        </li>
+    </ol>
+
+    <hr>
+    <div>
+
+        <p class="rojo">Soy un rojo</p>
+        <p class="azul">Soy un azul</p>
+        <p class="verde">Soy un verde</p>
+    </div>
+
+    <hr>
+
+    <div class="contenedor">
+        <img class="imagen" src="../tema 4/image/gatitos.jpg">
+ 
+     <p class="texto">En general, a la cría se la denomina cachorro de gato o gatito o minino.​ 
+      el argot de las exposiciones felinas, suele denominarse pet a los cachorros más jóvenes que aún no han alcanzado la edad de por lo menos seis meses para entrar a competir.
+      En general, a la cría se la denomina cachorro de gato o gatito o minino.​ 
+      el argot de las exposiciones felinas, suele denominarse pet a los cachorros más jóvenes que aún no han alcanzado la edad de por lo menos seis meses para entrar a competir.
+      En general, a la cría se la denomina cachorro de gato o gatito o minino.​ 
+      el argot de las exposiciones felinas, suele denominarse pet a los cachorros más jóvenes que aún no han alcanzado la edad de por lo menos seis meses para entrar a competir.
+    </p>
+ 
+     </div>
+
+     <hr>
+
+     <a class="enlace" href="#">leer mas</a>
+
+     <hr>
+
+     <form>
+        <input type="checkbox" name="nombre1" value="rojo">rojo <br>
+        <input type="checkbox" name="nombre2" value="negro">negro <br>
+        <input type="checkbox" name="nombre3" value="azul">azul <br>
+        <!--en checkbox tiene que tener nombre diferente en name para que envie los 3 valores-->
+        <hr>
+
+        <input type="radio" name="sexo" value="hombre">hombre <br>
+        <input type="radio" name="sexo" value="mujer">mujer <br>
+        <input type="radio" name="sexo" value="no_contesta">no contesta <br>
+        <!--en radio tiene que tener el mismo nombre para que envie el valor que has puesto correctamente-->
+
+
+     </form>
+</body>
+</html>
