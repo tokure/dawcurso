@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        input,select{
+            display:block;
+            margin-bottom: 10px;
+            border: 1px solid grey;
+            width: 200px;
+            padding: 5px;
+        }
+
+        input.error{
+            border: 1px solid red;
+        }
+    
+        span{
+            display: block;
+
+        }
+
+        span.error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario" action="" method="POST">
+        <p>Nombre:</p> <input type="text" name="nombre" id="nombre" required>
+        <span id="aviso_nombre">*Mínimo 5 caracteres</span>
+        
+<hr>
+
+        <p>Sexo:</p> 
+        <select name="sexo" id="sexo">
+            <option value="h">Hombre</option>
+            <option value="m">Mujer</option>
+        </select>
+<hr>
+        Color Rojo<input type="radio" name="colores" value="r">
+        Color Azul<input type="radio" name="colores" value="a"> 
+        Color Verde<input type="radio" name="colores" value="v">
+<hr>     
+        <input type="checkbox" name="aficiones" value="leer"> Leer
+        <input type="checkbox" name="aficiones" value="tv"> Ver la TV
+        <input type="checkbox" name="aficiones" value="comer"> Comer
+        <input type="checkbox" name="aficiones" value="dormir"> Dormir
+        <br>
+<hr>
+        <label for="comentarios">Escribe un comentario</label><br>
+        <textarea name="comentarios" id="comentarios" cols="30" rows="10"></textarea>
+
+        <input type="button"  name="enviar" id="enviar" onclick="mostrar_datos()" value="Enviar">
+
+    </form>
+
+</body>
+
+<script>
+
+// añadir al formulario un campo edad hasta 18-75 y un campo DNI que me diga si (9)la cantidad de numeros es incorrecta
+//como sacar la letra del dni. hay un array con las letras aptas . numero de dni%23 y el resto coge el indice correspoindiente del array. freecodecamp
+    function mostrar_datos(){
+
+        //recoger valor de un input. Caso A
+        //nombre = document.getElementById("nombre").value;//cojo el valor directamente
+        //recoger valor de un input. Caso B
+        nombre = document.getElementById("nombre");//primero lo cojo del input
+        nombre_valor = nombre.value;//recojo el valor del input
+        //flats
+        nombre_ok = true;
+        edad_ok = true;
+        dni_ok = true;
+
+            
+        if(nombre_valor == ""){
+            nombre_ok = false;
+        }
+        if(nombre_valor.length < 5){
+            nombre_ok = false;
+        }
+
+        if(nombre_ok == false){
+            document.getElementById("nombre").className ="error";
+            document.getElementById("aviso_nombre").className ="error";
+        }
+
+        else{
+            document.getElementById("nombre").className = "";
+            document.getElementById("aviso_nombre").className = "";
+        }
+
+        //recoger valor de un select, conviene caso B
+        sexo = document.getElementById("sexo");//el select entero
+        sexo_valor = sexo.value;//el valor seleccionado
+        //recoger el valor de la etiqueta
+        indice_seleccionado = sexo.selectedIndex;//el indice de option seleccionado
+        etiqueta_seleccionada = sexo.options[indice_seleccionado].text//la etiqueta del option seleccionado
+        //console.log(etiqueta_seleccionada);
+
+        
+        //recoger el valor de radio buttons
+        colores = document.getElementsByName("colores");//usamos getElementsByName porque son varios, devuelve un array
+        //recorremos el array buscando el checked
+        for(indice=0; indice < colores.length; indice++){
+
+            if(colores[indice].checked == true){
+                indice_seleccionado = indice;//guardo el indice del chequeado
+            } 
+        } color_seleccionado = colores[indice_seleccionado].value;
+        console.log(color_seleccionado)
+
+        //recoger valores de un checkbox
+        aficiones = document.getElementsByName("aficiones");
+        aficiones_seleccionadas = new Array();
+        indice_aficiones_seleccionadas = new Array();
+
+        for(indice=0; indice < aficiones.length; indice++){
+
+            if(aficiones[indice].checked == true){//si esta checkeado
+                indice_aficiones_seleccionadas.push(indice);//guardo el indice
+                aficiones_seleccionadas.push(aficiones[indice].value)//lo guardo en el array
+            } 
+        }
+
+        //recoger el valor del textarea
+        comentario = document.getElementById("comentarios").value;
+        //console.log(comentario)
+
+        document.getElementById("formulario").submit();
+        //document.getElementById("formulario").reset();
+
+    }
+
+</script>
+
+</html>
