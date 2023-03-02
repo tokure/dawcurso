@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+function media_array(mi_array) {
+    contador = 0, summ = 0, tamaño = mi_array.length;
+    while (contador < tamaño) {
+        summ = summ + mi_array[contador++];
+}
+    return summ / tamaño;
+}
+mi_array = [1, 5, 2, 3, 7, 8];
+resultado = media_array(mi_array);
+document.write(resultado);
+</script>
+</html>
